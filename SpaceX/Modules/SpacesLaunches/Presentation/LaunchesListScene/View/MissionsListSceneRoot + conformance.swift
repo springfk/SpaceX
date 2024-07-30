@@ -32,6 +32,9 @@ extension MissionsListSceneRoot: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard indexPath.row + 1 == viewModel.items.count else {
+            return
+        }
         viewModel.loadMoreItemIfNeeded {[weak tableView, weak self] _ , error in
             guard error == nil else {
                 self?.presentAlert(for:error!)

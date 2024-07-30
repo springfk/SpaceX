@@ -17,10 +17,10 @@ struct CoreDTO: Codable {
 
     enum CodingKeys: String, CodingKey {
         case core, flight, gridfins, legs, reused
-        case landingAttempt
-        case landingSuccess
-        case landingType
-        case landpad
+        case landingAttempt = "landing_attempt"
+        case landingSuccess = "landing_success"
+        case landingType = "landing_type"
+        case landpad = "landing_pad"
     }
 }
 

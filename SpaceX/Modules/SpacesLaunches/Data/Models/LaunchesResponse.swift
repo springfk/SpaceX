@@ -10,10 +10,13 @@ import Foundation
 struct LaunchesResponse: Codable {
     
     let docs: [LaunchDTO]
-    let totalDocs, offset, limit, totalPages: Int
+    let totalDocs: Int
+    let offset: Int?
+    let limit, totalPages: Int
     let page, pagingCounter: Int
     let hasPrevPage, hasNextPage: Bool
-    let prevPage, nextPage: Int
+    let prevPage: Int?
+    let nextPage: Int
 }
 
 

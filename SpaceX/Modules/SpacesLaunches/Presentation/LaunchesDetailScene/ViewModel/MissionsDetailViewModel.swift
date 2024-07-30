@@ -16,7 +16,7 @@ class MissionsDetailViewModel: MissionsDetailViewModelProtocol {
     }
     
     var isSuccessfull: Bool {
-        entity.success
+        entity.success ?? false
     }
     
     var name: String {

@@ -43,12 +43,13 @@ class HttpClientAPI: ApiClient {
                 completion(.failure(.validationResponse(statusCode: response.statusCode, message: "There is no data")))
                 return
             }
-            
+        
             do {
                 let decoder = JSONDecoder()
                 let decodedObject = try decoder.decode(T.self, from: data)
                 completion(.success(decodedObject))
             } catch let decodingError {
+            
                 completion(.failure(.decodingError(decodingError)))
             }
         }

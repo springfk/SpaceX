@@ -15,7 +15,7 @@ struct LaunchMission: Codable {
     let net: Bool
     let window: Int?
     let rocket: String?
-    let success: Bool
+    let success: Bool?
     let failures: [String]?
     let details: String?
     let crew: [Crew]?
@@ -24,7 +24,7 @@ struct LaunchMission: Codable {
     let flightNumber: Int
     let name, date_UTC: String
     let date_Unix: Double
-    let date_Local: Date
+    let date_Local: String
     let date_Precision: String?
     let upcoming: Bool
     let cores: [Core]

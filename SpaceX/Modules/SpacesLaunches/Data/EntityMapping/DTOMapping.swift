@@ -15,14 +15,14 @@ extension LaunchesResponse {
             $0.toDomain()
         },
              totalDocs: totalDocs,
-             offset: offset,
+             offset: offset ?? 0,
              limit: limit,
              totalPages: totalPages,
              page: page,
              pagingCounter: pagingCounter,
              hasPrevPage: hasPrevPage,
              hasNextPage: hasNextPage,
-             prevPage: prevPage,
+             prevPage: prevPage ?? 0,
              nextPage: nextPage)
     }
 }
