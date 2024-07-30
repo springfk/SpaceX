@@ -18,7 +18,7 @@ class HttpClientAPI: ApiClient {
     }
     
     func request<T: Decodable>(endpoint: ApiRequestable, completion: @escaping CompletionHandler <T>) throws -> APIClientTaskCancelable? {
-        // TODO: map all errors
+        
         let request = try endpoint.urlRequest(baseURL: baseURL)
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else {
@@ -57,7 +57,36 @@ class HttpClientAPI: ApiClient {
     }
  
     
-   
+    func request(endpoint: ApiRequestable, completion: @escaping CompletionHandler <Data>) throws -> APIClientTaskCancelable? {
+        let request = try endpoint.urlRequest(baseURL: baseURL)
+        let task = session.dataTask(with: request) { [weak self] data, response, error in
+            guard let self = self else {
+                return
+            }
+            if let error = error, let mappedError = self.handleError(error) {
+                completion(.failure(mappedError))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                completion(.failure(.validationResponse(statusCode: -1, message: "There is no response")))
+                return
+            }
+            
+            guard 200..<300 ~= response.statusCode else {
+                completion(.failure(.validationResponse(statusCode: response.statusCode, message: nil)))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.validationResponse(statusCode: response.statusCode, message: "There is no data")))
+                return
+            }
+            completion(.success(data))
+        }
+        task.resume()
+        return task
+    }
     
     private func handleError(_ error: Error) -> APIError? {
         switch error {

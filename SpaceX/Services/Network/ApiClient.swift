@@ -20,6 +20,9 @@ protocol ApiClient: AnyObject {
     
     @discardableResult
     func request<T: Decodable>(endpoint: ApiRequestable, completion: @escaping CompletionHandler <T>) throws -> APIClientTaskCancelable?
+    
+    @discardableResult
+    func request(endpoint: ApiRequestable, completion: @escaping CompletionHandler <Data>) throws -> APIClientTaskCancelable?
 }
 
 
