@@ -11,13 +11,12 @@ import Foundation
 
 extension MissionsDetailSceneRoot: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageUrls.count
+        return viewModel.imagesCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as! ImageCollectionViewCell
-        let url = imageUrls[indexPath.item]
-        cell.configure(with: url)
+        cell.configure(viewModel: viewModel, atIndex: indexPath.item)
         return cell
     }
   

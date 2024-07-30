@@ -13,15 +13,13 @@ extension MissionsListSceneRoot: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        launches.count
-        
+        viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "missionsListSceneCell", for: indexPath) as! MissionsListSceneCell
-         let launch = launches[indexPath.row]
-        print(launch)
-        cell.updateContent(indexPath: indexPath, mession: launch)
+        let launchVM = viewModel.items[indexPath.row]
+        cell.bind(viewModel: launchVM)
         cell.backgroundColor = Colors.backgroundColor
         cell.selectionStyle = .none
         let margin = cell.layoutMargins.left
@@ -30,13 +28,18 @@ extension MissionsListSceneRoot: UITableViewDataSource, UITableViewDelegate {
      }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let navigationcontroller = self.navigationController else { return }
-        let coordinator = MissionsDetailSceneCoordinator(navigationController: navigationcontroller)
-        print("\(launches[indexPath.row])")
-        coordinator.start(with: launches[indexPath.row])
+        viewModel.didSelectItem(atIndex: indexPath.row)
     }
     
-    
-  
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        viewModel.loadMoreItemIfNeeded {[weak tableView, weak self] _ , error in
+            guard error == nil else {
+                self?.presentAlert(for:error!)
+                return
+            }
+            tableView?.reloadSections(IndexSet(integer: indexPath.section),
+                                      with: .automatic)
+        }
+    }
     
 }

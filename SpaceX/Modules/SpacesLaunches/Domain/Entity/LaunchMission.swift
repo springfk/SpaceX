@@ -23,7 +23,7 @@ struct LaunchMission: Codable {
     let launchpad: String?
     let flightNumber: Int
     let name, date_UTC: String
-    let date_Unix: Int
+    let date_Unix: Double
     let date_Local: Date
     let date_Precision: String?
     let upcoming: Bool
