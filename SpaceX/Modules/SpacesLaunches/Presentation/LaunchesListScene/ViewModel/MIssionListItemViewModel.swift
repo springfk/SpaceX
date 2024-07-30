@@ -25,7 +25,7 @@ struct DefaultMissionListItemViewCell: MissionListItemViewModel {
     
     
     var sucessStatus: String {
-        entity.success ? "sucessed" : "failed"
+        entity.success ?? false ? "sucessed" : "failed"
     }
     
     var flightNumber: String {
@@ -33,7 +33,7 @@ struct DefaultMissionListItemViewCell: MissionListItemViewModel {
     }
     
     var isSuccessfull: Bool {
-        entity.success
+        entity.success ?? false
     }
     
     var name: String {

@@ -12,8 +12,8 @@ struct LinksDTO: Codable {
     let reddit: RedditDTO
     let flickr: FlickrDTO
     let presskit: String?
-    let webcast: String
-    let youtube_id: String
+    let webcast: String?
+    let youtube_id: String?
     let article, wikipedia: String?
 
     enum CodingKeys: String, CodingKey {

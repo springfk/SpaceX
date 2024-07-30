@@ -15,7 +15,7 @@ struct LaunchDTO: Codable {
     let net: Bool
     let window: Int?
     let rocket: String?
-    let success: Bool
+    let success: Bool?
     let failures: [String]?
     let details: String?
     let crew: [CrewDTO]?
@@ -24,7 +24,7 @@ struct LaunchDTO: Codable {
     let flightNumber: Int
     let name, date_UTC: String
     let date_Unix: Double
-    let date_Local: Date
+    let date_Local: String
     let date_Precision: String?
     let upcoming: Bool
     let cores: [CoreDTO]
@@ -36,17 +36,18 @@ struct LaunchDTO: Codable {
         case fairings, links
         case static_fire_date_utc
         case static_fire_date_unix
-        case net, window, rocket, success, failures, details, crew, ships, capsules, payloads, launchpad
-        case flightNumber
+        case net, window, rocket, success, failures
+        case details, crew, ships, capsules, payloads, launchpad
+        case flightNumber = "flight_number"
         case name
-        case date_UTC
-        case date_Unix
-        case date_Local
-        case date_Precision
+        case date_UTC = "date_utc"
+        case date_Unix = "date_unix"
+        case date_Local = "date_local"
+        case date_Precision = "date_precision"
         case upcoming, cores
-        case autoUpdate
+        case autoUpdate = "auto_update"
         case tbd
-        case launchLibraryID
+        case launchLibraryID = "launch_library_id"
         case id
     }
 }

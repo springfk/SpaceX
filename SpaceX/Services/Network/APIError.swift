@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum APIError: Error {
+enum APIError: LocalizedError {
     case invalidURL
     case requestFailed(Error)
     case validationResponse(statusCode: Int, message: String?)
@@ -15,6 +15,9 @@ enum APIError: Error {
     case encodingError(Error)
     case notConnectedToInternet
     
+    var errorDescription: String? {
+        return localizedDescription
+    }
     
     var localizedDescription: String {
         switch self {

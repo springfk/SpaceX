@@ -59,7 +59,12 @@ final class MissionsListSceneViewModel: MissionsListSceneViewModelProtocol {
     }
     
     func loadMoreItemIfNeeded(completion: @escaping ItemsCompletionHandler) {
-        missionUsecase.getLauches(page: page, size: size, sortAsc: false) {[weak self] page, error in
+        guard hasNext else {
+            completion(false, nil)
+            return
+        }
+        
+        missionUsecase.getLauches(page: page + 1, size: size, sortAsc: false) {[weak self] page, error in
             self?.performOnMainQueue {
                 guard error == nil else {
                     completion(false, error!)
