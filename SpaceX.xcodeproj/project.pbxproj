@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C16E62D2C593939002AB8E3 /* BookmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E62C2C593939002AB8E3 /* BookmarkRepository.swift */; };
+		0C16E62F2C593B06002AB8E3 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E62E2C593B06002AB8E3 /* ImageRepository.swift */; };
+		0C16E6312C593E0D002AB8E3 /* ImageNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6302C593E0D002AB8E3 /* ImageNetworkRequest.swift */; };
+		0C16E6332C5948F8002AB8E3 /* MissionsRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6322C5948F8002AB8E3 /* MissionsRespository.swift */; };
+		0C16E6352C594A0F002AB8E3 /* LaunchNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6342C594A0F002AB8E3 /* LaunchNetworkRequest.swift */; };
+		0C16E6372C594F95002AB8E3 /* LaunchAPIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6362C594F95002AB8E3 /* LaunchAPIRoute.swift */; };
 		0C55BBEA2C52B07D0082745B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C55BBE92C52B07D0082745B /* AppDelegate.swift */; };
 		0C55BBEC2C52B07D0082745B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C55BBEB2C52B07D0082745B /* SceneDelegate.swift */; };
 		0C55BBF32C52B07E0082745B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C55BBF22C52B07E0082745B /* Assets.xcassets */; };
@@ -102,6 +108,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C16E62C2C593939002AB8E3 /* BookmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRepository.swift; sourceTree = "<group>"; };
+		0C16E62E2C593B06002AB8E3 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		0C16E6302C593E0D002AB8E3 /* ImageNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkRequest.swift; sourceTree = "<group>"; };
+		0C16E6322C5948F8002AB8E3 /* MissionsRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsRespository.swift; sourceTree = "<group>"; };
+		0C16E6342C594A0F002AB8E3 /* LaunchNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkRequest.swift; sourceTree = "<group>"; };
+		0C16E6362C594F95002AB8E3 /* LaunchAPIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAPIRoute.swift; sourceTree = "<group>"; };
 		0C55BBE62C52B07D0082745B /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C55BBE92C52B07D0082745B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C55BBEB2C52B07D0082745B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +220,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C16E62B2C59391D002AB8E3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0C16E62C2C593939002AB8E3 /* BookmarkRepository.swift */,
+				0C16E62E2C593B06002AB8E3 /* ImageRepository.swift */,
+				0C16E6322C5948F8002AB8E3 /* MissionsRespository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		0C55BBDD2C52B07D0082745B = {
 			isa = PBXGroup;
 			children = (
@@ -286,7 +308,8 @@
 		0CAD5FEA2C53993F008F3306 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				0CB346352C59149B00C4F8F6 /* EnittyMapping */,
+				0C16E62B2C59391D002AB8E3 /* Repository */,
+				0CB346352C59149B00C4F8F6 /* EntityMapping */,
 				0CB3459F2C57C19A00C4F8F6 /* Models */,
 				0CB345A92C580ED900C4F8F6 /* Networking */,
 			);
@@ -373,6 +396,9 @@
 			isa = PBXGroup;
 			children = (
 				0CB346052C58FA1200C4F8F6 /* LaunchEndpointQuery.swift */,
+				0C16E6302C593E0D002AB8E3 /* ImageNetworkRequest.swift */,
+				0C16E6342C594A0F002AB8E3 /* LaunchNetworkRequest.swift */,
+				0C16E6362C594F95002AB8E3 /* LaunchAPIRoute.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -518,12 +544,12 @@
 			path = RepositoryInterface;
 			sourceTree = "<group>";
 		};
-		0CB346352C59149B00C4F8F6 /* EnittyMapping */ = {
+		0CB346352C59149B00C4F8F6 /* EntityMapping */ = {
 			isa = PBXGroup;
 			children = (
 				0CB346362C5914BE00C4F8F6 /* DTOMapping.swift */,
 			);
-			path = EnittyMapping;
+			path = EntityMapping;
 			sourceTree = "<group>";
 		};
 		0CB3463B2C59242B00C4F8F6 /* UseCase */ = {
@@ -700,9 +726,11 @@
 				0CB345E02C58EF0F00C4F8F6 /* MissionsListSceneRoot + conformance.swift in Sources */,
 				0CB345EF2C58EF2C00C4F8F6 /* Colors.swift in Sources */,
 				0CB345A72C57C19A00C4F8F6 /* PatchDTO.swift in Sources */,
+				0C16E6372C594F95002AB8E3 /* LaunchAPIRoute.swift in Sources */,
 				0CB346442C59264F00C4F8F6 /* ImageUsecase.swift in Sources */,
 				0CB345AD2C580F3000C4F8F6 /* ApiRequestable.swift in Sources */,
 				0CB345A82C57C19A00C4F8F6 /* RedditDTO.swift in Sources */,
+				0C16E6352C594A0F002AB8E3 /* LaunchNetworkRequest.swift in Sources */,
 				0CB345DF2C58EF0F00C4F8F6 /* MissionListScene + Cell.swift in Sources */,
 				0CECF8212C56B2B1009BC30E /* HttpClientAPI.swift in Sources */,
 				0CB3464B2C592F8800C4F8F6 /* ImageUsecaseImp.swift in Sources */,
@@ -732,11 +760,13 @@
 				0CB346472C59271300C4F8F6 /* BookmarkLaunchUsecaseImp.swift in Sources */,
 				0CB3460C2C58FA1200C4F8F6 /* LaunchEndpointQuery.swift in Sources */,
 				0CB3462A2C58FE8500C4F8F6 /* Core.swift in Sources */,
+				0C16E62D2C593939002AB8E3 /* BookmarkRepository.swift in Sources */,
 				0CB3462C2C58FE8500C4F8F6 /* Links.swift in Sources */,
 				0CB345B22C58D27200C4F8F6 /* APIParamEncoder.swift in Sources */,
 				0CB345E52C58EF0F00C4F8F6 /* LaunchesUIModel.swift in Sources */,
 				0CB345DE2C58EF0F00C4F8F6 /* MissionsDetailSceneViewModel.swift in Sources */,
 				0CB345F22C58EF2C00C4F8F6 /* Icons.swift in Sources */,
+				0C16E6312C593E0D002AB8E3 /* ImageNetworkRequest.swift in Sources */,
 				0CB345A52C57C19A00C4F8F6 /* LinksDTO.swift in Sources */,
 				0CB346162C58FC7B00C4F8F6 /* BookmarksRepositoryInterface.swift in Sources */,
 				0CB346182C58FCA400C4F8F6 /* ImagesRepositoryInterface.swift in Sources */,
@@ -749,11 +779,13 @@
 				0CB345F02C58EF2C00C4F8F6 /* Date.swift in Sources */,
 				0C55BBEC2C52B07D0082745B /* SceneDelegate.swift in Sources */,
 				0CB345D82C58EF0F00C4F8F6 /* MessionsDetailSceneCoordinator.swift in Sources */,
+				0C16E62F2C593B06002AB8E3 /* ImageRepository.swift in Sources */,
 				0CAD601F2C540562008F3306 /* UIColor + Extensions.swift in Sources */,
 				0CB346402C59246C00C4F8F6 /* MissionsUsecases.swift in Sources */,
 				0CB3462E2C58FE8500C4F8F6 /* Reddit.swift in Sources */,
 				0CB346492C5928AA00C4F8F6 /* MissionsUsecasesImp.swift in Sources */,
 				0CB346292C58FE8500C4F8F6 /* LaunchMission.swift in Sources */,
+				0C16E6332C5948F8002AB8E3 /* MissionsRespository.swift in Sources */,
 				0CAD60162C53EFAE008F3306 /* UIViewController + Extensions.swift in Sources */,
 				0CB345F12C58EF2C00C4F8F6 /* Fonts.swift in Sources */,
 				0CB345A32C57C19A00C4F8F6 /* FlickrDTO.swift in Sources */,
