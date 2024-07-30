@@ -20,8 +20,6 @@ class MissionsDetailSceneCoordinator {
     
     func start(with mession: LaunchesUIModel) {
         
-        
-        
 //        navigationController.pushViewController(, animated: true)
     }
     

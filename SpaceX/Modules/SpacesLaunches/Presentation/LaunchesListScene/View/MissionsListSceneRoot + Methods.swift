@@ -27,14 +27,24 @@ extension MissionsListSceneRoot {
 
         ])
         
-        loadMockData()
+        
     }
     
     func setupPageNavigation() {
         self.pageTitle = "SpaceX missions"
     }
+    
     func setupUI() {
         setupPageNavigation()
         addTableView()
+    }
+    
+    func presentAlert(for error: Error) {
+        let alert = UIAlertController(title: "Error",
+                                      message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        present(alert, animated: true)
     }
 }

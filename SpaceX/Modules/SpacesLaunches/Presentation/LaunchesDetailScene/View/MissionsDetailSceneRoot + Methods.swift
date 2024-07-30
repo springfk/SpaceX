@@ -59,7 +59,7 @@ extension MissionsDetailSceneRoot {
        
         
         setupImages()
-        
+        updateBookmarkButton()
         pageControl.numberOfPages = viewModel.imagesCount
         pageControl.currentPage = 0
     }
@@ -69,12 +69,12 @@ extension MissionsDetailSceneRoot {
         pageControl.isHidden = count <= 1
         imageCollectionView.isScrollEnabled = count > 1
         imageCollectionView.reloadData()
+        
     }
     
     // MARK: - Actions
     
     @objc private func openWikipedia() {
-    
         viewModel.openWikipedia()
     }
     
@@ -83,7 +83,16 @@ extension MissionsDetailSceneRoot {
         var isBookmarked = viewModel.isBookmarked
         isBookmarked.toggle()
         viewModel.bookmark(isBookmarked)
-//        updateBoookmarkButton()
+        updateBookmarkButton()
+    }
+    
+    func updateBookmarkButton() {
+        var isBookmarked = viewModel.isBookmarked
+        if isBookmarked {
+            bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        } else {
+            bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        }
     }
 }
 

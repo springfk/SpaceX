@@ -9,6 +9,19 @@
 import UIKit
 import Foundation
 
+
+
 protocol MissionsListSceneViewModelProtocol: AnyObject {
-    // ViewModel Delegate protocol
+    
+    
+    typealias ItemsCompletionHandler = (_ didLoad: Bool, _ error: Error?) -> Void
+    
+    var items: [MissionListItemViewModel]  { get }
+    
+    func didSelectItem(atIndex index: Int)
+    
+    func loadInitialItems(completion: @escaping  ItemsCompletionHandler)
+    
+    func loadMoreItemIfNeeded(completion: @escaping ItemsCompletionHandler)
+    
 }

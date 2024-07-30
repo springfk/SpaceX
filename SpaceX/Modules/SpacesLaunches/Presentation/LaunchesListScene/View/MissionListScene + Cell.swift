@@ -12,6 +12,12 @@ import UIKit
 class MissionsListSceneCell : UITableViewCell {
     var indexPath: IndexPath?
     
+    var viewModel: MissionListItemViewModel?
+    
+    deinit {
+        viewModel = nil
+    }
+    
     lazy var stackView : UIStackView = {
         let stackView = UIStackView()
         stackView.backgroundColor = .clear
@@ -133,28 +139,27 @@ class MissionsListSceneCell : UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = UIImage(resource: ImageResource.placeholder)
+        nameLabel.text = ""
+        successLabel.text = ""
+        flightNumberLabel.text = ""
+        detailsLabel.text = ""
+        dateLabel.text = ""
+    }
     
-    
-    func updateContent(indexPath: IndexPath, mession: LaunchesUIModel) {
-        
-        self.indexPath = indexPath
-        
-        nameLabel.text = mession.name
-        flightNumberLabel.text = "Flight Number: \(mession.flightNumber)"
-        successLabel.text = mession.success ? "Success" : "Failure"
-        dateLabel.text = "Date: \(convertUnixToDate(TimeInterval(mession.dateUnix)))"
-        detailsLabel.text = mession.details ?? "No details available"
-        if let url = mession.iconURL {
-            // Download the image
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                guard let data = data, error == nil else { return }
-                DispatchQueue.main.async {
-                    self.iconImageView.image = UIImage(data: data)
-                }
-            }.resume()
-        } else {
-            iconImageView.image = nil
-        }
+    func bind(viewModel vm: MissionListItemViewModel) {
+        viewModel = nil
+        viewModel = vm
+        nameLabel.text = vm.name
+        successLabel.text = vm.sucessStatus
+        detailsLabel.text = vm.details
+        dateLabel.text = vm.date
+        flightNumberLabel.text = vm.flightNumber
+        viewModel?.getIconImage(completion: {[weak self] image in
+            self?.iconImageView.image = image ?? UIImage(resource: ImageResource.placeholder)
+        })
     }
     
 }

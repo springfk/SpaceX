@@ -14,6 +14,7 @@
 		0C16E6352C594A0F002AB8E3 /* LaunchNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6342C594A0F002AB8E3 /* LaunchNetworkRequest.swift */; };
 		0C16E6372C594F95002AB8E3 /* LaunchAPIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6362C594F95002AB8E3 /* LaunchAPIRoute.swift */; };
 		0C16E6392C595D40002AB8E3 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6382C595D40002AB8E3 /* ArrayExtension.swift */; };
+		0C16E63B2C5968FA002AB8E3 /* MIssionListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E63A2C5968FA002AB8E3 /* MIssionListItemViewModel.swift */; };
 		0C55BBEA2C52B07D0082745B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C55BBE92C52B07D0082745B /* AppDelegate.swift */; };
 		0C55BBEC2C52B07D0082745B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C55BBEB2C52B07D0082745B /* SceneDelegate.swift */; };
 		0C55BBF32C52B07E0082745B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C55BBF22C52B07E0082745B /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		0C16E6342C594A0F002AB8E3 /* LaunchNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkRequest.swift; sourceTree = "<group>"; };
 		0C16E6362C594F95002AB8E3 /* LaunchAPIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAPIRoute.swift; sourceTree = "<group>"; };
 		0C16E6382C595D40002AB8E3 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		0C16E63A2C5968FA002AB8E3 /* MIssionListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIssionListItemViewModel.swift; sourceTree = "<group>"; };
 		0C55BBE62C52B07D0082745B /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C55BBE92C52B07D0082745B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C55BBEB2C52B07D0082745B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 			children = (
 				0CB345D12C58EF0F00C4F8F6 /* MissionsListSceneViewModelProtocol.swift */,
 				0CB345D22C58EF0F00C4F8F6 /* MessionsListSceneViewModel.swift */,
+				0C16E63A2C5968FA002AB8E3 /* MIssionListItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				0CB346182C58FCA400C4F8F6 /* ImagesRepositoryInterface.swift in Sources */,
 				0CB345E12C58EF0F00C4F8F6 /* MissionsListSceneRoot + Methods.swift in Sources */,
 				0C55BBEA2C52B07D0082745B /* AppDelegate.swift in Sources */,
+				0C16E63B2C5968FA002AB8E3 /* MIssionListItemViewModel.swift in Sources */,
 				0CB345A02C57C19A00C4F8F6 /* CoreDTO.swift in Sources */,
 				0CB345E22C58EF0F00C4F8F6 /* MissionsListSceneRoot.swift in Sources */,
 				0CB346422C59249900C4F8F6 /* BookmarkLaunchUsecase.swift in Sources */,
