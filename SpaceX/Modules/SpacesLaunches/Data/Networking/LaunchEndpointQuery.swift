@@ -21,8 +21,14 @@ struct LaunchEndpointQuery: Encodable {
         let sort: Sort
         
         struct Sort: Encodable {
+            
+            enum SortOptions: String, Encodable {
+                case ascending = "asc"
+                case deascending = "desc"
+            }
             //based on what we need
-            let flight_number: String
+            var flight_number: SortOptions = .deascending
+
         }
     }
 }
