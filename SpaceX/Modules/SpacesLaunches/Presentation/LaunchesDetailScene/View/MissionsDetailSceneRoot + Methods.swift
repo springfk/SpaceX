@@ -45,55 +45,45 @@ extension MissionsDetailSceneRoot {
     func setupUI() {
         setupPageNavigation()
         addUIElementToDetailView()
+        wikipediaButton.addTarget(self,
+                                  action: #selector(openWikipedia),
+                                  for: .touchUpInside)
     }
     
-    func updateContent(with mission: LaunchesUIModel) {
+    func updateContent() {
         
-        missionNameLabel.text = mission.name
-        dateLabel.text = "Date: \(convertUnixToDate(TimeInterval(mission.dateUnix)))"
-        descriptionLabel.text = mission.details ?? "No details available"
+        missionNameLabel.text = viewModel.name
+        dateLabel.text = viewModel.date
+        descriptionLabel.text = viewModel.description ?? "No details available"
+        wikipediaButton.isHidden = !viewModel.hasWikipedia
+       
         
-        if let wikipediaURL = mission.wikipediaURL {
-            self.wikipediaURL = URL(string: mission.wikipediaURL ?? "")
-            wikipediaButton.isHidden = false
-            wikipediaButton.addTarget(self, action: #selector(openWikipedia), for: .touchUpInside)
-        } else {
-            wikipediaButton.isHidden = true
-        }
+        setupImages()
         
-        setupImages(urls: mission.imageURLs ?? [])
-        
-        pageControl.numberOfPages = mission.imageURLs?.count ?? 0
+        pageControl.numberOfPages = viewModel.imagesCount
         pageControl.currentPage = 0
     }
     
-    private func setupImages(urls: [URL]) {
-        self.imageUrls = urls
-        pageControl.isHidden = urls.count <= 1
-        imageCollectionView.isScrollEnabled = urls.count > 1
+    private func setupImages() {
+        let count = viewModel.imagesCount
+        pageControl.isHidden = count <= 1
+        imageCollectionView.isScrollEnabled = count > 1
         imageCollectionView.reloadData()
     }
     
     // MARK: - Actions
     
     @objc private func openWikipedia() {
-        guard let url = wikipediaURL else { return }
-        
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: { success in
-                if !success {
-                    print("Failed to open Wikipedia Address: \(url)")
-                }
-            })
-        } else {
-            let success = UIApplication.shared.openURL(url)
-            if !success {
-                print("Failed to open Wikipedia Address: \(url)")
-            }
-        }
+    
+        viewModel.openWikipedia()
     }
     
     @objc func setBookMark() {
         //handle saving in hashMAp
+        var isBookmarked = viewModel.isBookmarked
+        isBookmarked.toggle()
+        viewModel.bookmark(isBookmarked)
+//        updateBoookmarkButton()
     }
 }
+

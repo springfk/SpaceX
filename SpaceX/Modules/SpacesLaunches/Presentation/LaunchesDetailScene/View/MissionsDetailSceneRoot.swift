@@ -12,12 +12,11 @@ import Foundation
 
 class MissionsDetailSceneRoot: ViewController.Base.Root {
     
-    var viewModel: MissionsDetailSceneViewModelProtocol!
-    var wikipediaURL: URL?
-    var imageUrls: [URL] = []
+    var viewModel: MissionsDetailViewModelProtocol
+   
     
     //MARK: - init
-    init(viewModel: MissionsDetailSceneViewModelProtocol!) {
+    init(viewModel: MissionsDetailViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
@@ -126,7 +125,7 @@ class MissionsDetailSceneRoot: ViewController.Base.Root {
         super.viewDidLoad()
         view.backgroundColor = Colors.backgroundColor
         setupUI()
-        updateContent(with: viewModel.messionInfo)
+        updateContent()
         
     }
 }

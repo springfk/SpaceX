@@ -20,9 +20,17 @@ class MissionsDetailSceneCoordinator {
     
     func start(with mession: LaunchesUIModel) {
         
-        let viewModel = MissionsDetailSceneViewModel(messionInfo: mession)
-        let viewController = MissionsDetailSceneRoot(viewModel: viewModel)
         
-        navigationController.pushViewController(viewController, animated: true)
+        
+//        navigationController.pushViewController(, animated: true)
     }
+    
+    /**
+     UIApplication.shared.open(url, options: [:], completionHandler: { success in
+         if !success {
+             print("Failed to open Wikipedia Address: \(url)")
+         }
+     })
+     */
+    ///*/
 }

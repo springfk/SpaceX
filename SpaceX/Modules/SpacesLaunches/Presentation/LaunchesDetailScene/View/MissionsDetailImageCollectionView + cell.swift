@@ -34,12 +34,15 @@ class ImageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with url: URL) {
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else { return }
-            DispatchQueue.main.async {
-                self.imageView.image = UIImage(data: data)
-            }
-        }.resume()
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = UIImage(resource: ImageResource.placeholder)
+    }
+    
+    func configure(viewModel: MissionDetailImageViewModelProtocol,
+                   atIndex index: Int ) {
+        viewModel.loadImage(atIndex: index) {[weak self] image in
+            self?.imageView.image = image ?? UIImage(resource: ImageResource.placeholder)
+        }
     }
 }
