@@ -1,5 +1,5 @@
 //
-//  LaunchDTO.swift
+//  LaunchMission.swift
 //  SpaceX
 //
 //  Created by Bahar on 5/7/1403 AP.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct LaunchDTO: Codable {
-    let fairings: FairingsDTO?
-    let links: LinksDTO
+struct LaunchMission: Codable {
+    let fairings: Fairings?
+    let links: Links
     let static_fire_date_utc: String?
     let static_fire_date_unix: Int?
     let net: Bool
@@ -18,7 +18,7 @@ struct LaunchDTO: Codable {
     let success: Bool
     let failures: [String]?
     let details: String?
-    let crew: [CrewDTO]?
+    let crew: [Crew]?
     let ships, capsules, payloads: [String]?
     let launchpad: String?
     let flightNumber: Int
@@ -27,7 +27,7 @@ struct LaunchDTO: Codable {
     let date_Local: Date
     let date_Precision: String?
     let upcoming: Bool
-    let cores: [CoreDTO]
+    let cores: [Core]
     let autoUpdate, tbd: Bool
     let launchLibraryID: String?
     let id: String
