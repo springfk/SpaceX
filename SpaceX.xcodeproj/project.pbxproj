@@ -15,6 +15,10 @@
 		0C16E6372C594F95002AB8E3 /* LaunchAPIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6362C594F95002AB8E3 /* LaunchAPIRoute.swift */; };
 		0C16E6392C595D40002AB8E3 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6382C595D40002AB8E3 /* ArrayExtension.swift */; };
 		0C16E63B2C5968FA002AB8E3 /* MIssionListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E63A2C5968FA002AB8E3 /* MIssionListItemViewModel.swift */; };
+		0C16E63D2C5984A0002AB8E3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E63C2C5984A0002AB8E3 /* AppCoordinator.swift */; };
+		0C16E63F2C5985B4002AB8E3 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E63E2C5985B4002AB8E3 /* AppDIContainer.swift */; };
+		0C16E6422C59864E002AB8E3 /* LaunchesDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6412C59864E002AB8E3 /* LaunchesDIContainer.swift */; };
+		0C16E6442C59878F002AB8E3 /* MissionSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16E6432C59878F002AB8E3 /* MissionSceneFactory.swift */; };
 		0C55BBEA2C52B07D0082745B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C55BBE92C52B07D0082745B /* AppDelegate.swift */; };
 		0C55BBEC2C52B07D0082745B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C55BBEB2C52B07D0082745B /* SceneDelegate.swift */; };
 		0C55BBF32C52B07E0082745B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C55BBF22C52B07E0082745B /* Assets.xcassets */; };
@@ -39,7 +43,7 @@
 		0CB345AD2C580F3000C4F8F6 /* ApiRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345AC2C580F3000C4F8F6 /* ApiRequestable.swift */; };
 		0CB345AF2C5810D700C4F8F6 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345AE2C5810D700C4F8F6 /* APIError.swift */; };
 		0CB345B22C58D27200C4F8F6 /* APIParamEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345B12C58D27200C4F8F6 /* APIParamEncoder.swift */; };
-		0CB345D82C58EF0F00C4F8F6 /* MessionsDetailSceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345C12C58EF0F00C4F8F6 /* MessionsDetailSceneCoordinator.swift */; };
+		0CB345D82C58EF0F00C4F8F6 /* MissionSceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345C12C58EF0F00C4F8F6 /* MissionSceneCoordinator.swift */; };
 		0CB345D92C58EF0F00C4F8F6 /* MissionsDetailSceneRoot + conformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345C32C58EF0F00C4F8F6 /* MissionsDetailSceneRoot + conformance.swift */; };
 		0CB345DA2C58EF0F00C4F8F6 /* MissionsDetailSceneRoot + Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345C42C58EF0F00C4F8F6 /* MissionsDetailSceneRoot + Methods.swift */; };
 		0CB345DB2C58EF0F00C4F8F6 /* MissionsDetailSceneRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB345C52C58EF0F00C4F8F6 /* MissionsDetailSceneRoot.swift */; };
@@ -118,6 +122,10 @@
 		0C16E6362C594F95002AB8E3 /* LaunchAPIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAPIRoute.swift; sourceTree = "<group>"; };
 		0C16E6382C595D40002AB8E3 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		0C16E63A2C5968FA002AB8E3 /* MIssionListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIssionListItemViewModel.swift; sourceTree = "<group>"; };
+		0C16E63C2C5984A0002AB8E3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		0C16E63E2C5985B4002AB8E3 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		0C16E6412C59864E002AB8E3 /* LaunchesDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesDIContainer.swift; sourceTree = "<group>"; };
+		0C16E6432C59878F002AB8E3 /* MissionSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionSceneFactory.swift; sourceTree = "<group>"; };
 		0C55BBE62C52B07D0082745B /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C55BBE92C52B07D0082745B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C55BBEB2C52B07D0082745B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,7 +164,7 @@
 		0CB345AC2C580F3000C4F8F6 /* ApiRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestable.swift; sourceTree = "<group>"; };
 		0CB345AE2C5810D700C4F8F6 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		0CB345B12C58D27200C4F8F6 /* APIParamEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParamEncoder.swift; sourceTree = "<group>"; };
-		0CB345C12C58EF0F00C4F8F6 /* MessionsDetailSceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessionsDetailSceneCoordinator.swift; sourceTree = "<group>"; };
+		0CB345C12C58EF0F00C4F8F6 /* MissionSceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionSceneCoordinator.swift; sourceTree = "<group>"; };
 		0CB345C32C58EF0F00C4F8F6 /* MissionsDetailSceneRoot + conformance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MissionsDetailSceneRoot + conformance.swift"; sourceTree = "<group>"; };
 		0CB345C42C58EF0F00C4F8F6 /* MissionsDetailSceneRoot + Methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MissionsDetailSceneRoot + Methods.swift"; sourceTree = "<group>"; };
 		0CB345C52C58EF0F00C4F8F6 /* MissionsDetailSceneRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionsDetailSceneRoot.swift; sourceTree = "<group>"; };
@@ -234,6 +242,15 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		0C16E6402C598623002AB8E3 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				0C16E63E2C5985B4002AB8E3 /* AppDIContainer.swift */,
+				0C16E6412C59864E002AB8E3 /* LaunchesDIContainer.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
 		0C55BBDD2C52B07D0082745B = {
 			isa = PBXGroup;
 			children = (
@@ -303,8 +320,10 @@
 		0C55BC1B2C5396100082745B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0C16E6402C598623002AB8E3 /* Containers */,
 				0C55BBE92C52B07D0082745B /* AppDelegate.swift */,
 				0C55BBEB2C52B07D0082745B /* SceneDelegate.swift */,
+				0C16E63C2C5984A0002AB8E3 /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -411,7 +430,8 @@
 		0CB345C22C58EF0F00C4F8F6 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				0CB345C12C58EF0F00C4F8F6 /* MessionsDetailSceneCoordinator.swift */,
+				0CB345C12C58EF0F00C4F8F6 /* MissionSceneCoordinator.swift */,
+				0C16E6432C59878F002AB8E3 /* MissionSceneFactory.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -735,6 +755,7 @@
 				0C16E6372C594F95002AB8E3 /* LaunchAPIRoute.swift in Sources */,
 				0CB346442C59264F00C4F8F6 /* ImageUsecase.swift in Sources */,
 				0C16E6392C595D40002AB8E3 /* ArrayExtension.swift in Sources */,
+				0C16E63D2C5984A0002AB8E3 /* AppCoordinator.swift in Sources */,
 				0CB345AD2C580F3000C4F8F6 /* ApiRequestable.swift in Sources */,
 				0CB345A82C57C19A00C4F8F6 /* RedditDTO.swift in Sources */,
 				0C16E6352C594A0F002AB8E3 /* LaunchNetworkRequest.swift in Sources */,
@@ -770,8 +791,11 @@
 				0C16E62D2C593939002AB8E3 /* BookmarkRepository.swift in Sources */,
 				0CB3462C2C58FE8500C4F8F6 /* Links.swift in Sources */,
 				0CB345B22C58D27200C4F8F6 /* APIParamEncoder.swift in Sources */,
+				0C16E63F2C5985B4002AB8E3 /* AppDIContainer.swift in Sources */,
 				0CB345E52C58EF0F00C4F8F6 /* LaunchesUIModel.swift in Sources */,
+				0C16E6442C59878F002AB8E3 /* MissionSceneFactory.swift in Sources */,
 				0CB345DE2C58EF0F00C4F8F6 /* MissionsDetailViewModel.swift in Sources */,
+				0C16E6422C59864E002AB8E3 /* LaunchesDIContainer.swift in Sources */,
 				0CB345F22C58EF2C00C4F8F6 /* Icons.swift in Sources */,
 				0C16E6312C593E0D002AB8E3 /* ImageNetworkRequest.swift in Sources */,
 				0CB345A52C57C19A00C4F8F6 /* LinksDTO.swift in Sources */,
@@ -786,7 +810,7 @@
 				0CB346372C5914BE00C4F8F6 /* DTOMapping.swift in Sources */,
 				0CB345F02C58EF2C00C4F8F6 /* Date.swift in Sources */,
 				0C55BBEC2C52B07D0082745B /* SceneDelegate.swift in Sources */,
-				0CB345D82C58EF0F00C4F8F6 /* MessionsDetailSceneCoordinator.swift in Sources */,
+				0CB345D82C58EF0F00C4F8F6 /* MissionSceneCoordinator.swift in Sources */,
 				0C16E62F2C593B06002AB8E3 /* ImageRepository.swift in Sources */,
 				0CAD601F2C540562008F3306 /* UIColor + Extensions.swift in Sources */,
 				0CB346402C59246C00C4F8F6 /* MissionsUsecases.swift in Sources */,
